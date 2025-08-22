@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "spring.datasource.secondary.url",
+      "type": "java.lang.String",
+      "description": "JDBC URL para o banco de dados secundário PostgreSQL."
+    },
+    {
+      "name": "spring.datasource.secondary.username",
+      "type": "java.lang.String",
+      "description": "Usuário para o banco de dados secundário PostgreSQL."
+    },
+    {
+      "name": "spring.datasource.secondary.password",
+      "type": "java.lang.String",
+      "description": "Senha para o banco de dados secundário PostgreSQL."
+    },
+    {
+      "name": "spring.datasource.secondary.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Classe do driver JDBC para o banco de dados secundário."
+    }
+  ]
+}
