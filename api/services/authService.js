@@ -17,7 +17,7 @@ const login =  async (email, senha) => {
     // gerar token JWT 
     const token = jwt.sign(
         {
-            id: user.id, email: user.email
+            id: user.id, email: user.email, role: 'admin'
         },
         SECRET,
         {
@@ -26,7 +26,7 @@ const login =  async (email, senha) => {
         
     );
 
-    return { token, user: { id: user.id, email: user.email }}
+    return { token, user: { id: user.id, email: user.email }, role: 'admin'}
 
 }
 
