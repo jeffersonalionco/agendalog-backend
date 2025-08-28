@@ -1,9 +1,10 @@
 import bcrypt from  "bcrypt";
 import jwt from   "jsonwebtoken";
 import userRepository from "../repositories/userRepository.js";
+import dotenv from  'dotenv'
+dotenv.config()
 
-
-const SECRET = process.env.JWT_SECRET || "OceuElindo"
+const SECRET = process.env.JWT_SECRET
 
 const login =  async (email, senha) => {
     const user = await userRepository.findByEmail(email);
@@ -21,7 +22,7 @@ const login =  async (email, senha) => {
         },
         SECRET,
         {
-            expiresIn: '3m'
+            expiresIn: '1m'
         }
         
     );

@@ -2,9 +2,12 @@ import Express from 'express'
 import sequelize from './api/db.js';
 import cors from 'cors'
 import authRoutes from './api/routes/authRoutes.js'
+import { authMidlleware } from './api/midllewares/authMidllewares.js';
 
-import { configDotenv } from 'dotenv';
-configDotenv()
+import dotenv from 'dotenv';
+dotenv.config()
+
+
 
 
 // Criando um instancia do express
@@ -13,11 +16,15 @@ app.use(cors({ origin: ['http://localhost:8080'] }))
 app.use(Express.json());
 
 // Rotas de autenticação
-app.use('/api/auth', authRoutes)
+app.use('/api/auth' ,authRoutes)
 
 
+app.post('/', () =>{
+    res.send('passou')
+})
+app.get("/", authMidlleware, (req, res) => {
+    console.log(req.headers['authorization'])
 
-app.get("/", (req, res) => {
     res.send("Hello Mundo")
 })
 
