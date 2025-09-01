@@ -15,6 +15,10 @@ const User = sequelize.define('User', {
     senha: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+      tipo: {
+        type: DataTypes.STRING,
+        allowNull: false,
     }
 },
     {

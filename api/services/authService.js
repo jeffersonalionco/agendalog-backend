@@ -18,16 +18,16 @@ const login =  async (email, senha) => {
     // gerar token JWT 
     const token = jwt.sign(
         {
-            id: user.id, email: user.email, role: 'admin'
+            id: user.id, email: user.email, tipo: user.tipo
         },
         SECRET,
         {
-            expiresIn: '1m'
+            expiresIn: '30m'
         }
         
     );
 
-    return { token, user: { id: user.id, email: user.email }, role: 'admin'}
+    return { token, user: { id: user.id, email: user.email }, tipo: user.tipo}
 
 }
 
